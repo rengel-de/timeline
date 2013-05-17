@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Timeline - Proof-of-concept</title>
+
+    <!-- That's my local d3 path. When working locally, use your local path. -->
+    <!--<script src="../../../lib/d3/d3.v3.js"></script>-->
+
+    <!-- That's the 'official' path. Comment out, when working locally. -->
+    <script src="http://mbostock.github.com/d3/d3.js"></script>
+
+    <!-- Store these two files in your application directory or on your path. -->
+    <script src="timeline.js"></script>
+    <link href="timeline.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<h3>Some Poets and Philosophers</h3>
+<div id="timeline"></div>
+<p>The timeline consists of two bands.<br>
+    The upper band shows the timeline items with data within the selected timeline interval.<br>
+    The lower band is the navigation band; it just shows the distribution of the items.<br>
+    The numbers in the lower band show the start, the length, and the end of the selected interval, respectively.
+</p>
+<p>Click on the lower band and drag to create a brush and select an interval.<br>
+    Click on the brush and drag to move the interval.<br>
+    Click on the left or right border of the brush and drag to resize the interval.<br>
+    Click on the lower band outside the brush to restore the original view.<br>
+    Mouseover an item to show a tooltip.
+</p>
+
+<script>
+
+    /*  You need a domElement, a sourceFile and a timeline.
+
+        The domElement will contain your timeline.
+        Use the CSS convention for identifying elements,
+        i.e. "div", "p", ".className", or "#id".
+
+        The sourceFile will contain your data.
+        If you prefer, you can also use tsv, xml, or json files
+        and the corresponding d3 functions for your data.
+
+
+        A timeline can have the following components:
+
+        .band(bandName, sizeFactor
+            bandName - string; the name of the band for references
+            sizeFactor - percentage; height of the band relation to the total height
+            Defines an area for timeline items.
+            A timeline must have at least one band.
+            Two bands are necessary, to change the selected time interval.
+            Three and Bands are allowed.
+
+        .xAxis(bandName)
+            bandName - string; the name of the band the xAxis will be attached to
+            Defines an xAxis for a band to show the range of the band.
+            This is optional, but highly recommended.
+
+        .labels(bandName)
+            bandName - string; the name of the band the labels will be attached to
+            Shows the start, length and end of the range of the band.
+            This is optional.
+
+        .tooltips(bandName)
+            bandName - string; the name of the band the labels will be attached to
+            Shows current start, length, and end of the selected interval of the band.
+            This is optional.
+
+        .brush(parentBand, targetBands]
+            parentBand - string; the band that the brush will be attached to
+            targetBands - array; the bands that are controlled by the brush
+            Controls the time interval of the targetBand.
+            Required, if you want to control/change the selected time interval
+            of one of the other bands.
+
+        .redraw()
+            Shows the initial view of the timeline.
+            This is required.
+
+        To make yourself familiar with these components try to
+        - comment out components and see what happens.
+        - change the size factors (second arguments) of the bands.
+        - rearrange the definitions of the components.
+    */
+
+    // Define domElement and sourceFile
+    var domElement = "#timeline";
+    var sourceFile = "philosophers.csv";
+
+    // Read in the data and construct the timeline
+    d3.csv(sourceFile, function(dataset) {
+
+        timeline(domElement)
+            .data(dataset)
+            .band("mainBand", 0.82)
+            .band("naviBand", 0.08)
+            .xAxis("mainBand")
+            .tooltips("mainBand")
+            .xAxis("naviBand")
+            .labels("mainBand")
+            .brush("naviBand", ["mainBand"])
+            .redraw();
+
+    });
+
+</script>
+
+</body>
+
+</html>

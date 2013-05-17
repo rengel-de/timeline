@@ -1,0 +1,87 @@
+.axis {
+    fill: #808080;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+.axis line, .axis path {
+    stroke-width : 1;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.band {
+    /*fill: #F4FFFF;*/
+    fill: #FAFAFA;
+}
+
+.bandLabel {
+    fill: blue;
+    background-color: #FF0000;
+    pointer-events: none;
+}
+
+.brush .extent {
+    stroke: gray;
+    fill: blue;
+    fill-opacity: .1;
+}
+
+.chart {
+    fill: #EEEEEE;
+}
+
+.interval {
+    fill: #AAFFFF;
+    stroke-width: 6;
+    pointer-events: true;
+    cursor : default;
+}
+
+.instant {
+    fill: #FFAAFF;
+    stroke-width: 6;
+    cursor : default;
+}
+
+.instantLabel {
+    fill : blue;
+    font: 10px sans-serif;
+    background-color: #FF0000;
+    shape-rendering: crispEdges;
+    /*pointer-events: none;*/
+}
+
+.intervalLabel {
+    fill : black;
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+    /*pointer-events: none;*/
+}
+
+.item {
+    cursor : default;
+    pointer-events: auto;
+}
+
+.svg {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: #FFFFFF;
+}
+
+.tooltip {
+    width: auto;
+    position: absolute;
+    visibility: hidden;
+    color : black;
+    cursor:default;
+    background-color: #FFFFEE;
+    border: 1px solid;
+    padding: 8px;
+    shape-rendering: crispEdges;
+    pointer-events: none;
+}
+
+
