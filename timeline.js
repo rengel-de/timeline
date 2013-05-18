@@ -250,7 +250,7 @@ function timeline(domElement) {
             .attr("text-anchor", "end");
 
         var midLabel = chart.append("text")
-            .attr("class", "bandLabel")
+            .attr("class", "durationLabel")
             .attr("x", band.w / 2)
             .attr("y", y)
             .attr("text-anchor", "center");
