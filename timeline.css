@@ -31,6 +31,13 @@
     fill: #EEEEEE;
 }
 
+.durationLabel {
+    fill: blue;
+    font-style: italic;
+    background-color: #FF0000;
+    pointer-events: none;
+}
+
 .interval {
     fill: #AAFFFF;
     stroke-width: 6;
