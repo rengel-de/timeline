@@ -6,6 +6,18 @@ in the time continuum in form of a timeline or timechart.
 Events can be instants (one date only) or intervals (start date
 and end date).
 
+The timeline consists of two bands.
+
+The upper band shows the timeline items with data within the selected timeline interval.
+The lower band is the navigation band; it just shows the distribution of the items.
+The numbers in the lower band show the start, the length, and the end of the selected interval, respectively.
+Click on the lower band and drag to create a brush and select an interval.
+
+Click on the brush and drag to move the interval.
+Click on the left or right border of the brush and drag to resize the interval.
+Click on the lower band outside the brush to restore the original view.
+Mouseover an item to show a tooltip.
+
 
 Acknowledgements
 ----------------
