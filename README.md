@@ -25,9 +25,9 @@ Acknowledgements
 This work was inspired by
 
 'Simile Timeline' by 'David François Huynh'
-(http://www.simile-widgets.org/timeline/).
+(http://www.simile-widgets.org/timeline/) and
 'Swimlane Chart using d3.js' by Bill Bunkat
-(http://bl.ocks.org/bunkat/1962173) and
+(http://bl.ocks.org/bunkat/1962173).
 
 
 The file structure
