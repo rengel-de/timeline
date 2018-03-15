@@ -107,3 +107,8 @@ Feedback
 
 I'm still a d3 newbie. So feedback on doing things more the 'd3 way' is very welcome.
 Comments, suggestions, and bug reports are welcome, too.
+
+License
+-------
+GNU GPLv3
+
