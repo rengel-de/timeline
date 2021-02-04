@@ -286,7 +286,7 @@ function timeline(domElement) {
 
         function getHtml(element, d) {
             var html;
-            if (element.attr("class") == "interval") {
+            if (element.attr("class") == "part interval") {
                 html = d.label + "<br>" + toYear(d.start) + " - " + toYear(d.end);
             } else {
                 html = d.label + "<br>" + toYear(d.start);
